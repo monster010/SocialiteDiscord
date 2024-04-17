@@ -1,5 +1,5 @@
 {
-    "name": "socialiteproviders/discord",
+    "name": "monster010/socialitediscord",
     "description": "Discord OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
     "keywords": [
@@ -16,8 +16,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/socialiteproviders/providers/issues",
-        "source": "https://github.com/socialiteproviders/providers",
+        "issues": "https://github.com/monster010/SocialiteDiscord/issues",
+        "source": "https://github.com/monster010/SocialiteDiscord",
         "docs": "https://socialiteproviders.com/discord"
     },
     "require": {
