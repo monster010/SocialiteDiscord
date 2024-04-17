@@ -72,6 +72,10 @@ class Provider extends AbstractProvider
     {
         return 'https://discord.com/api/oauth2/token';
     }
+	
+	protected function getRevokeUrl() {
+		return 'https://discord.com/api/oauth2/token/revoke';
+	}
 
     /**
      * {@inheritdoc}
@@ -89,6 +93,17 @@ class Provider extends AbstractProvider
 
         return json_decode((string) $response->getBody(), true);
     }
+	
+	public function revokeToken(string $token, string $hint = 'access_token') {
+		return $this->getHttpClient()->post($this->getRevokeUrl(), [
+			RequestOptions::FORM_PARAMS => [
+				'client_id' => $this->clientId,
+				'client_secret' => $this->clientSecret,
+				'token' => $token,
+				'token_type_hint' => $hint
+			]
+		]);
+	}
 
     /**
      * @param  array  $user
